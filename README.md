@@ -1,2 +1,3 @@
 # This project focuses on React Forms
-A control form implements useState from react
+An API is used to fetch: post for SignUp 
+Token is set at the App global scope so its children components use it
