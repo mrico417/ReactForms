@@ -6,6 +6,7 @@ export const Authenticate = ({ appToken }) => {
 
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState(null);
+    const [resultDataFromAuthentication, setResultDataFromAuthentication] = useState(null);
 
     async function handleClick() {
         
@@ -27,6 +28,8 @@ export const Authenticate = ({ appToken }) => {
                 setSuccessMessage("Need to Sign Up First!");
             } else {
                 setSuccessMessage(result.message);
+                //const { data } = result
+                setResultDataFromAuthentication(result.data.username)
             }
 
             console.log(result)
@@ -42,7 +45,8 @@ export const Authenticate = ({ appToken }) => {
             <div>
                 <h2>Authenticate</h2>  
                 { error && (<p>{error}</p>) }
-                { successMessage && (<p>{successMessage}</p>) }           
+                { successMessage && (<p>{successMessage}</p>) }  
+                { resultDataFromAuthentication && (<p>Hello, {resultDataFromAuthentication} !!!</p>)}         
                 <button
                     onClick={handleClick}>Authenticate Token</button>
             </div>
