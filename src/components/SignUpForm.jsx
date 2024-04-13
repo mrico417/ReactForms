@@ -26,6 +26,8 @@ export const SignUpForm =({ setAppToken }) => {
             const result = await response.json();
             setAppToken(result.token);
             //console.log("result", result);
+            setUsername("");
+            setPassword("");
         } catch (err) {
             setError(err.message);
             console.log(error);
