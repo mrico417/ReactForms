@@ -9,8 +9,18 @@ function App() {
 
   return (
     <>
-      <SignUpForm setAppToken={setAppToken} />
-      <Authenticate appToken={appToken}/>
+      {
+        ( appToken === "" ?
+          (
+            <SignUpForm setAppToken={setAppToken} />
+          ) :
+          (
+            <Authenticate appToken={appToken}/>
+          )
+        )
+      }
+
+      
     </>
   )
 }
